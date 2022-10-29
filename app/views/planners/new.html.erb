@@ -1,0 +1,8 @@
+<h1>Planners#new</h1>
+<p>Find me in app/views/planners/new.html.erb</p>
+<%= form_for @planner, url: planner_create_path do |f| %>
+  <%= f.text_field :name %>
+  <%= f.text_field :password %>
+  <%= f.text_field :password_confirmation %>
+  <%= f.submit %>
+<% end %>

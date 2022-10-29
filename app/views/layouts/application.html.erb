@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AddressApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <%# <script type="text/javascript" src="js/jquery.zip2addr.js"></script> %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <% if session[:planner_id] %>
+        <%= link_to "イベント作成", events_new_path %>
+        <%= link_to "ログアウト", "#" %>
+  
+        <%= Planner.find(session[:planner_id]).name %>
+
+      <% else %>
+        <%= link_to "ログイン", "/" %>
+      <% end %>
+      
+    </header>
+    <%= yield %>
+  </body>
+</html>

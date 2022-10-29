@@ -1,0 +1,11 @@
+<% if session[:planner_id] %>
+<h1>Events#index</h1>
+<p>Find me in app/views/events/index.html.erb</p>
+<% @events.each do |event| %>
+  <%= event.name %><br/>
+<% end %>
+
+<% else %>
+  ログインしてください
+  <%= link_to "ログインして", "/" %>
+<% end %>
